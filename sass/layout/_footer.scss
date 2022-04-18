@@ -50,10 +50,16 @@
   &__mail {
     margin-bottom: 9px;
     text-align: center;
+    @include desktop {
+      text-align: left;
+    }
   }
 
   &__tel {
     text-align: center;
+    @include desktop {
+      text-align: left;
+    }
   }
 
   &__street {

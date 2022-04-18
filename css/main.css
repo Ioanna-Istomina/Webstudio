@@ -836,8 +836,20 @@ h3 {
   text-align: center;
 }
 
+@media screen and (min-width: 1200px) {
+  .adress__mail {
+    text-align: left;
+  }
+}
+
 .adress__tel {
   text-align: center;
+}
+
+@media screen and (min-width: 1200px) {
+  .adress__tel {
+    text-align: left;
+  }
 }
 
 .adress__street {
@@ -1157,7 +1169,7 @@ textarea::placeholder {
   resize: none;
   height: 120px;
   padding: 12px 16px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   outline: none;
 }
 

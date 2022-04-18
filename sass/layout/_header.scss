@@ -1,6 +1,6 @@
 .header {
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border: 1px solid #ececec;
   @include tablet {
     padding-top: 21px;
@@ -14,6 +14,7 @@
 
   &__mobile-menu {
     @include flex(flex, space-between, center);
+    height: 40px;
     @include tablet {
       display: none;
     }

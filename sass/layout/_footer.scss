@@ -3,10 +3,38 @@
   padding-bottom: 60px;
 
   background-color: #2f303a;
-  display: flex;
+  @include tablet {
+    display: flex;
+  }
 
   &__container {
-    @include flex(flex, null, baseline);
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: baseline;
+    }
+
+    @include desktop {
+      align-items: baseline;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 60px;
+
+    @include tablet {
+      margin-right: 165px;
+    }
+
+    @include desktop {
+      margin-right: 70px;
+      margin-bottom: 0;
+      margin-left: 0;
+    }
   }
 }
 
@@ -21,6 +49,11 @@
 
   &__mail {
     margin-bottom: 9px;
+    text-align: center;
+  }
+
+  &__tel {
+    text-align: center;
   }
 
   &__street {
@@ -39,13 +72,24 @@
 /* Call to action */
 
 .cta {
-  margin-left: 70px;
-  margin-right: 93px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+  align-items: center;
+
+  @include desktop {
+    align-items: start;
+  }
 
   &-social-title {
     color: var(--white-text-color);
     @include font(700, 14px, 1.14, 0.03em, uppercase);
     margin-bottom: 20px;
+  }
+
+  @include desktop {
+    margin-bottom: 0;
+    margin-right: 93px;
   }
 }
 
@@ -65,18 +109,45 @@
 .distribution {
   &__form {
     display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @include desktop {
+      flex-direction: row;
+    }
   }
 
   &__title {
     color: var(--white-text-color);
     @include font(700, 14px, 1.14, 0.03em, uppercase);
     margin-bottom: 20px;
+    text-align: center;
+    @include desktop {
+      text-align: left;
+    }
+  }
+
+  &__input {
+    margin-bottom: 20px;
+    width: 100%;
+
+    @include desktop {
+      margin-bottom: 0;
+      margin-right: 12px;
+    }
+
+    @include tablet {
+      width: 450px;
+    }
+
+    @include desktop {
+      width: 358px;
+    }
   }
 
   &__mail {
-    min-width: 358px;
+    width: 100%;
     height: 50px;
-    margin-right: 12px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: rgba(255, 255, 255, 0.6);
     border-radius: 4px;
@@ -104,5 +175,5 @@
 
 input::placeholder {
   color: rgba(255, 255, 255, 0.6);
-  @include font(null, 16px, 1.25, 0, 03em, null);
+  @include font(null, 16px, 1.25, 0.03em, null);
 }
